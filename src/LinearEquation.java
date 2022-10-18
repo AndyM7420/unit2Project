@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 public class LinearEquation {
+    //attributes//
     DecimalFormat dRound= new DecimalFormat("0.00");
     private int x1;
     private String pairOne;
@@ -12,6 +13,7 @@ public class LinearEquation {
     private double slopeY;
     private double slopeX;
     private double slope;
+    //Constructor Linear Equation//
     public LinearEquation(int x1, int x2, int y1, int y2) {
         this.x1 = x1;
         this.x2 = x2;
@@ -32,15 +34,18 @@ public class LinearEquation {
         }
 
     }
+   //method distance that calculates the distance between two points//
     public String distance() {
         double distance = Math.sqrt((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)));
         return dRound.format(distance);
 
     }
+    // method coordinate Point which calculates the y coordinate with the new given x coordinate
     public String coordinatePoint(double xValue){
         double newPoint=(int)(slope)*(xValue-x1)+y1;
         return "Solved coordinate point is: ("+dRound.format(xValue)+","+dRound.format(newPoint)+")";
     }
+    //method toString
     public String toString() {
        String pairs = "First Pair:" + pairOne+ "\n";
        pairs += "Second Pair" + pairTwo + "\n";
@@ -49,7 +54,6 @@ public class LinearEquation {
        pairs += Equation+"\n";
        pairs += "Distance between points:"+distance();
 
-        return pairs;
-    }
-
+        return pairs;}
+    //End Code :)
 }
