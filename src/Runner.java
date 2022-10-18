@@ -12,9 +12,8 @@ public class Runner {
         int x2 = Integer.parseInt(xyPointTwo.substring(xyPointTwo.indexOf("(") + 1, xyPointTwo.indexOf(",")));
         int y2 = Integer.parseInt(xyPointTwo.substring(xyPointTwo.indexOf(",") + 1, xyPointTwo.indexOf(")")));
         LinearEquation Equation = new LinearEquation(x1,x2,y1,y2);
-       System.out.print("Enter a new x coordinate:");
-       int newXCoordinate = Integer.parseInt(s.nextLine());
-       Equation.coordinatePoint(newXCoordinate);
         System.out.println(Equation.toString());
-
+       System.out.print("Enter a new x coordinate:");
+       double newXCoordinate = Double.parseDouble(s.nextLine());
+       System.out.print(Equation.coordinatePoint(newXCoordinate));
     }}

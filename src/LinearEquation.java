@@ -11,6 +11,8 @@ public class LinearEquation {
     private int y1;
     private int y2;
     private double yIntercept;
+    private double slopeY;
+    private double slopeX;
     private double slope;
     public LinearEquation(int x1, int x2, int y1, int y2) {
         this.x1 = x1;
@@ -19,13 +21,15 @@ public class LinearEquation {
         this.y2 = y2;
         pairOne = "(" + x1 + "," + y1 + ")";
         pairTwo = "(" + x2 + "," + y2 + ")";
-        slope =((y2-y1)/(x2-x1));
+        slopeY=(y2-y1);
+        slopeX =((x2-x1));
+        slope= slopeY/slopeX;
         yIntercept = (this.x1 * -(slope) + this.y1);
         if (yIntercept>=0.00){
-            Equation = "Slope intercept form: y= "+slope+"x"+"+"+yIntercept;
+            Equation = "Slope intercept form: y= "+slopeY+"/"+slopeX+"x"+"+"+yIntercept;
 
         }else {
-            Equation = "Slope intercept form: y= "+slope+"x"+yIntercept;
+            Equation = "Slope intercept form: y= "+slopeY+"/"+slopeX+"x"+yIntercept;
 
         }
 
@@ -38,18 +42,18 @@ public class LinearEquation {
     public String toString() {
        String pairs = "First Pair:" + pairOne+ "\n";
        pairs += "Second Pair" + pairTwo + "\n";
-       pairs += "Slope of line:"+(slope)+"\n";
+       pairs += "Slope of line:"+dRound.format(slope)+"\n";
        pairs += "Y-intercept:"+ dRound.format(yIntercept)+"\n";
        pairs += Equation+"\n";
-       pairs += "Distance between points:"+distance()+"\n";
-       pairs+= "Solved coordinate point is: "+ "("+(int)xValue+","+(int)newPoint+")";
+       pairs += "Distance between points:"+distance();
 
         return pairs;
     }
-    public double coordinatePoint(int xValue){
+    public String coordinatePoint(double xValue){
         this.xValue= xValue;
-        int newPoint=(int)(slope)*(xValue-x1)+y1;
+        double newPoint=(int)(slope)*(xValue-x1)+y1;
         this.newPoint= newPoint;
-        return newPoint;
+        String outPut = "Solved coordinate point is: ("+xValue+","+newPoint+")";
+        return outPut;
     }
 }
