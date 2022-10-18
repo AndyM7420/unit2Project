@@ -1,1 +1,56 @@
-Public
+import decimal format
+LinearEquation class
+Instance Variables:
+private int x1- x coordinate of the first pair
+private int x2- x coordinate of the second pair
+private int y1-y coordinate of the first pair
+private int y2-y coordinate of the second pair
+private double yIntercept- assigns the calculated yIntercept of the line to a double
+private double slopeY= assigns the calculated first half of the slope
+private double slopeX= assigns the calculated second half of the slope
+private double slope= assigns the slopeY over slopeX to make one unified slope as a double
+private String pairOne= assigns the given numbers as one string coordinate form
+private String pairTwo= assigns the second pair of given numbers as one string coordinate form
+private Equation= assigns the y=mx+b statement with the already calculated slope and y-intercept
+
+Constructor
+public LinearEquation(int x1, int x2, int y1, int y2)
+sets each parameter as its corresponding attribute with the same name
+sets each xy coordinate to one pair that is assigned to attribute pairOne and pairTwo
+calculates the slope of the line
+calculates the y-intercept of the line
+checks if y-intercept is greater then 0.00 to add the plus sign in as a string
+
+Methods
+public String distance()
+calculates the distance between the two pairs of points and assigns it to a local variable distance
+returns distance with dRound.format to round it to hundredths place
+
+public String coordinatePoint(double xValue)
+uses the inputted number to find the y value of that number using the already calculated slope and x-y values
+returns a string wih the new pair
+
+public String toString()
+declares a local string variable called pairs
+this will display all relevant information involving the class
+including x and y coordinates
+y=mx+b formula
+y-intercept
+slope of line
+distance between points
+
+EquationRunner.java
+Step 1: Greets the user and ask for first coordinate point
+Step 2: assigns the given input to a string variable using scanner s
+Step 3: use string methods to separate the first pair to convert the string to integers and assign it to x1 and y1
+Step 4: asks the user for second coordinate point
+Step 5: assigns the given input to another string variable using scanner s
+Step 6: repeat step 3 with second pair and assign the converted integers to x2 and y2
+step 7: Calls the constructor with a named single object. Parameters are filled with the assigned x1, x2, y1, y2
+Step 8: prints the toString method with the declared object name
+Step 9: Asks the user for a new x coordinate
+Step 10: assigns the given input to a double. The given input is also converted to a double
+Step 11: Prints the new coordinate pair using method coordinate point. Method is called with the object name
+
+
+

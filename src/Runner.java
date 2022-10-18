@@ -1,9 +1,8 @@
-import javax.sound.sampled.Line;
 import java.util.Scanner;
 public class Runner {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter the first x-y coordinate point: ");
+        System.out.print("Welcome! Enter the first x-y coordinate point: ");
         String xyPoint = s.nextLine();
         int x1 = Integer.parseInt(xyPoint.substring(xyPoint.indexOf("(") + 1, xyPoint.indexOf(",")));
         int y1 = Integer.parseInt(xyPoint.substring(xyPoint.indexOf(",") + 1, xyPoint.indexOf(")")));

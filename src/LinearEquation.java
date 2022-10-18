@@ -6,8 +6,6 @@ public class LinearEquation {
     private String pairTwo;
     private String Equation;
     private int x2;
-    private double xValue;
-    private double newPoint;
     private int y1;
     private int y2;
     private double yIntercept;
@@ -26,10 +24,10 @@ public class LinearEquation {
         slope= slopeY/slopeX;
         yIntercept = (this.x1 * -(slope) + this.y1);
         if (yIntercept>=0.00){
-            Equation = "Slope intercept form: y= "+slopeY+"/"+slopeX+"x"+"+"+yIntercept;
+            Equation = "Slope intercept form: y= "+(int)slopeY+"/"+(int)slopeX+"x"+"+"+dRound.format(yIntercept);
 
         }else {
-            Equation = "Slope intercept form: y= "+slopeY+"/"+slopeX+"x"+yIntercept;
+            Equation = "Slope intercept form: y= "+(int)slopeY+"/"+(int)slopeX+"x"+dRound.format(yIntercept);
 
         }
 
@@ -38,6 +36,10 @@ public class LinearEquation {
         double distance = Math.sqrt((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)));
         return dRound.format(distance);
 
+    }
+    public String coordinatePoint(double xValue){
+        double newPoint=(int)(slope)*(xValue-x1)+y1;
+        return "Solved coordinate point is: ("+dRound.format(xValue)+","+dRound.format(newPoint)+")";
     }
     public String toString() {
        String pairs = "First Pair:" + pairOne+ "\n";
@@ -49,11 +51,5 @@ public class LinearEquation {
 
         return pairs;
     }
-    public String coordinatePoint(double xValue){
-        this.xValue= xValue;
-        double newPoint=(int)(slope)*(xValue-x1)+y1;
-        this.newPoint= newPoint;
-        String outPut = "Solved coordinate point is: ("+xValue+","+newPoint+")";
-        return outPut;
-    }
+
 }
