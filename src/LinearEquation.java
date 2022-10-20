@@ -23,7 +23,7 @@ public class LinearEquation {
         pairTwo = "(" + x2 + "," + y2 + ")";
         slopeY=(y2-y1);
         slopeX =((x2-x1));
-        slope= slopeY/slopeX;
+        slope = slopeY/slopeX;
         yIntercept = (this.x1 * -(slope) + this.y1);
         if (yIntercept>=0.00){
             Equation = "Slope intercept form: y= "+(int)slopeY+"/"+(int)slopeX+"x"+"+"+dRound.format(yIntercept);
@@ -42,7 +42,7 @@ public class LinearEquation {
     }
     // method coordinate Point which calculates the y coordinate with the new given x coordinate
     public String coordinatePoint(double xValue){
-        double newPoint=(int)(slope)*(xValue-x1)+y1;
+        double newPoint=(slope)*(xValue-x1)+y1;
         return "Solved coordinate point is: ("+dRound.format(xValue)+","+dRound.format(newPoint)+")";
     }
     //method toString
